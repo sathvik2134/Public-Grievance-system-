@@ -48,28 +48,86 @@ export default function FileGrievance() {
       setLocation("");
       setImage(null);
 
-    } catch (error) {
+    } catch {
       alert("Failed to file grievance");
     } finally {
       setLoading(false);
     }
   };
 
+  /* ================= STYLES ================= */
+
+  const page = {
+    minHeight: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    background:
+      "radial-gradient(circle at 15% 20%, #00F0FF40, transparent 40%), radial-gradient(circle at 80% 70%, #ff00cc40, transparent 40%), linear-gradient(120deg,#0f0c29,#302b63,#24243e)",
+    fontFamily: "Inter, sans-serif",
+    color: "#fff",
+    position: "relative"
+  };
+
+  const card = {
+    backdropFilter: "blur(18px)",
+    background: "rgba(255,255,255,0.06)",
+    border: "1px solid rgba(255,255,255,0.12)",
+    borderRadius: "20px",
+    padding: "45px",
+    width: "500px",
+    boxShadow: "0 20px 60px rgba(0,0,0,0.6)"
+  };
+
+  const label = {
+    marginTop: "16px",
+    fontSize: "13px",
+    opacity: 0.8
+  };
+
+  const input = {
+    width: "100%",
+    padding: "13px",
+    marginTop: "6px",
+    borderRadius: "10px",
+    border: "1px solid rgba(255,255,255,0.15)",
+    background: "rgba(0,0,0,0.25)",
+    color: "#fff",
+    outline: "none",
+    transition: "0.3s"
+  };
+
+  const button = {
+    width: "100%",
+    marginTop: "30px",
+    padding: "16px",
+    borderRadius: "12px",
+    border: "none",
+    fontWeight: 600,
+    fontSize: "16px",
+    cursor: "pointer",
+    background: "linear-gradient(90deg,#00F0FF,#0072ff)",
+    boxShadow: "0 0 18px rgba(0,240,255,0.6)",
+    transition: "0.3s"
+  };
+
+  const hover = e => e.currentTarget.style.transform = "scale(1.03)";
+  const leave = e => e.currentTarget.style.transform = "scale(1)";
+
+  /* ================= UI ================= */
+
   return (
-    <div style={pageContainer}>
+    <div style={page}>
       <div style={card}>
 
-        <h2 style={{ marginBottom: "10px" }}>
-          File New Grievance
-        </h2>
-
-        <p style={{ color: "#666", marginBottom: "30px" }}>
-          Submit a grievance related to public services
+        <h2 style={{ marginBottom: 6 }}>File New Grievance</h2>
+        <p style={{ opacity: 0.7, marginBottom: 25 }}>
+          Submit issues related to public services
         </p>
 
         <form onSubmit={handleSubmit}>
 
-          <label style={label}>Department</label>
+          <div style={label}>Department</div>
           <select
             value={department}
             onChange={e => setDepartment(e.target.value)}
@@ -83,37 +141,34 @@ export default function FileGrievance() {
             <option value="Sanitation">Sanitation</option>
           </select>
 
-          <label style={label}>Subject</label>
+          <div style={label}>Subject</div>
           <input
-            type="text"
-            placeholder="Brief title of the issue"
             value={subject}
             onChange={e => setSubject(e.target.value)}
+            placeholder="Brief title of the issue"
             required
             style={input}
           />
 
-          <label style={label}>Description</label>
+          <div style={label}>Description</div>
           <textarea
             rows="4"
-            placeholder="Describe the issue in detail"
             value={description}
             onChange={e => setDescription(e.target.value)}
             required
             style={{ ...input, resize: "none" }}
           />
 
-          <label style={label}>Location / Address</label>
+          <div style={label}>Location</div>
           <input
-            type="text"
-            placeholder="Near ABC School, Main Road, City"
             value={location}
             onChange={e => setLocation(e.target.value)}
             required
+            placeholder="Enter address"
             style={input}
           />
 
-          <label style={label}>Attach Image (optional)</label>
+          <div style={label}>Attach Image</div>
           <input
             type="file"
             accept="image/*"
@@ -124,6 +179,8 @@ export default function FileGrievance() {
           <button
             type="submit"
             style={button}
+            onMouseEnter={hover}
+            onMouseLeave={leave}
             disabled={loading}
           >
             {loading ? "Submitting..." : "Submit Grievance"}
@@ -135,54 +192,5 @@ export default function FileGrievance() {
   );
 }
 
-/* =========================
-   SHARED UI THEME STYLES
-   ========================= */
-
-const pageContainer = {
-  minHeight: "100vh",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  background: "linear-gradient(135deg, #f5f7fa, #c3cfe2)",
-  padding: "40px"
-};
-
-const card = {
-  background: "#fff",
-  padding: "40px",
-  width: "480px",
-  borderRadius: "14px",
-  boxShadow: "0 10px 30px rgba(0,0,0,0.15)"
-};
-
-const label = {
-  display: "block",
-  fontSize: "14px",
-  marginBottom: "6px",
-  marginTop: "15px",
-  color: "#333"
-};
-
-const input = {
-  width: "100%",
-  padding: "10px 12px",
-  borderRadius: "8px",
-  border: "1px solid #ccc",
-  fontSize: "14px",
-  outline: "none"
-};
-
-const button = {
-  width: "100%",
-  marginTop: "30px",
-  padding: "12px",
-  background: "#2563eb",
-  color: "#fff",
-  border: "none",
-  borderRadius: "8px",
-  fontSize: "15px",
-  cursor: "pointer"
-};
 
 
