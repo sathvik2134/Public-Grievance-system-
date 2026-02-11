@@ -29,7 +29,7 @@ const fetchGrievances = async () => {
       {
         id: 501,
         department: "Roads",
-        subject: "Potholes everywhere",
+        subject: "Pothole everywhere",
         description: "Severe road damage near junction",
         location: "City Center",
         status: "PENDING",
