@@ -49,7 +49,7 @@ const fetchGrievances = async () => {
         department: "Electricity",
         subject: "Frequent power cuts",
         description: "Daily outages at night",
-        location: "Sector 7",
+        location: "Sector 9",
         status: "RESOLVED",
         createdAt: Date.now()
       },
