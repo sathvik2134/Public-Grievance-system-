@@ -24,7 +24,7 @@ Unlike traditional grievance portals that only store requests, this system:
 - Runs on scalable AWS infrastructure  
 - Implements user credibility modeling  
 
-This is not just a CRUD application — it is a **grievance intelligence engine**.
+
 
 ---
 
@@ -244,6 +244,7 @@ This system ensures:
 - Departments receive structured, ranked complaints  
 - Faster resolution cycles  
 - Data-driven governance  
+
 
 
 
