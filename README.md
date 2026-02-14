@@ -6,7 +6,7 @@
 ![AI](https://img.shields.io/badge/AI-BERT%20%7C%20DistilBERT-purple)
 ![Database](https://img.shields.io/badge/Database-PostgreSQL-blue?logo=postgresql)
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-CodePipeline-red?logo=amazon-aws)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 
 Cloud-Native | AI-Powered | Event-Driven | Scalable | Production-Ready
 
@@ -244,5 +244,6 @@ This system ensures:
 - Departments receive structured, ranked complaints  
 - Faster resolution cycles  
 - Data-driven governance  
+
 
 
